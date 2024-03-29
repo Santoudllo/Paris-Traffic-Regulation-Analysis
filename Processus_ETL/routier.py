@@ -13,7 +13,7 @@ if response.status_code == 200:
     output_file = "/home/santoudllo/Desktop/DEEP_LEARNING/Paris-Traffic-Regulation-Analysis/visualisation_donnees_brutes/output_data.csv"
     
     
-    df.to_csv(output_file, index=False , sep=",")
+    df.to_csv(output_file, index=False)
     
     print("Les données ont été exportées avec succès vers:", output_file)
 else:
