@@ -1,14 +1,20 @@
 import requests
+import pandas as pd
 
-def get_api_data(url):
-    try:
-        response = requests.get(url)
-        response.raise_for_status()  
-        data = response.json()
-        for result in data.get('results', []):  
-            print(result)
-    except requests.exceptions.RequestException as e:
-        print("Erreur lors de la récupération des données:", e)
+url = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/comptages-routiers-permanents/records?limit=100"
+response = requests.get(url)
 
-url = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/comptages-routiers-permanents/records?limit=20"
-get_api_data(url)
+if response.status_code == 200:
+   
+    data = response.json()
+    df = pd.json_normalize(data['results'])
+    
+   
+    output_file = "/home/santoudllo/Desktop/DEEP_LEARNING/Paris-Traffic-Regulation-Analysis/visualisation_donnees_brutes/output_data.csv"
+    
+    
+    df.to_csv(output_file, index=False , sep=",")
+    
+    print("Les données ont été exportées avec succès vers:", output_file)
+else:
+    print("Erreur lors de la récupération des données:", response.status_code)
