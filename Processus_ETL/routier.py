@@ -10,7 +10,7 @@ if response.status_code == 200:
     df = pd.json_normalize(data['results'])
     
    
-    output_file = "/home/santoudllo/Desktop/DEEP_LEARNING/Paris-Traffic-Regulation-Analysis/visualisation_donnees_brutes/output_data.csv"
+    output_file = "/home/santoudllo/Desktop/DEEP_LEARNING/Paris-Traffic-Regulation-Analysis/data/output_data.csv"
     
     
     df.to_csv(output_file, index=False)

@@ -9,7 +9,7 @@ def load_data(file_path):
     return data
 
 # Chemin vers le fichier CSV
-file_path = "/home/santoudllo/Desktop/DEEP_LEARNING/Paris-Traffic-Regulation-Analysis/visualisation_donnees_brutes/output_data.csv"
+file_path = "/home/santoudllo/Desktop/DEEP_LEARNING/Paris-Traffic-Regulation-Analysis/data/output_data.csv"
 
 data = load_data(file_path)
 
