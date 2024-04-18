@@ -38,6 +38,7 @@ bokeh @ file:///croot/bokeh_1706912149278/work
 boltons @ file:///work/ci_py311/boltons_1677685195580/work
 botocore @ file:///croot/botocore_1701286451219/work
 Bottleneck @ file:///croot/bottleneck_1707864210935/work
+branca==0.7.1
 Brotli @ file:///work/ci_py311/brotli-split_1676830125088/work
 cachetools @ file:///tmp/build/80754af9/cachetools_1619597386817/work
 certifi @ file:///croot/certifi_1707229174982/work/certifi
@@ -86,11 +87,14 @@ fastjsonschema @ file:///work/ci_py311_2/python-fastjsonschema_1679340124475/wor
 filelock @ file:///croot/filelock_1700591183607/work
 flake8 @ file:///work/ci_py311/flake8_1677709235205/work
 Flask @ file:///croot/flask_1702980023242/work
+folium==0.16.0
 fonttools==4.25.0
 frozenlist @ file:///croot/frozenlist_1698702560391/work
 fsspec @ file:///croot/fsspec_1701286474621/work
 future @ file:///work/ci_py311_2/future_1679335928186/work
 gensim @ file:///work/ci_py311/gensim_1677033391129/work
+geographiclib==2.0
+geopy==2.4.1
 gitdb @ file:///tmp/build/80754af9/gitdb_1617117951232/work
 GitPython @ file:///croot/gitpython_1696936983078/work
 gmpy2 @ file:///work/ci_py311/gmpy2_1676839849213/work
@@ -191,6 +195,7 @@ numexpr @ file:///croot/numexpr_1696515281613/work
 numpy @ file:///croot/numpy_and_numpy_base_1708638617955/work/dist/numpy-1.26.4-cp311-cp311-linux_x86_64.whl#sha256=5f96f274d410a1682519282ae769c877d32fdbf171aa8badec7bf5e1d3a1748a
 numpydoc @ file:///work/ci_py311/numpydoc_1676845056742/work
 openpyxl==3.0.10
+openrouteservice==2.3.3
 overrides @ file:///croot/overrides_1699371140756/work
 packaging @ file:///croot/packaging_1693575174725/work
 pandas @ file:///croot/pandas_1702317985682/work/dist/pandas-2.1.4-cp311-cp311-linux_x86_64.whl#sha256=a15c481f210e34ff91dac4944a5f8f0fe38ff2c3afa7c45ea621ff460d6f9b57
@@ -312,6 +317,7 @@ SQLAlchemy @ file:///croot/sqlalchemy_1705089115293/work
 stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
 statsmodels @ file:///croot/statsmodels_1689937266057/work
 streamlit @ file:///croot/streamlit_1706200479775/work
+streamlit_folium==0.19.1
 sympy @ file:///croot/sympy_1701397643339/work
 tables @ file:///croot/pytables_1705614842881/work
 tabulate @ file:///croot/tabulate_1701354810597/work
