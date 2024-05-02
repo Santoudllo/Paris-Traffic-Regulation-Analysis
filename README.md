@@ -78,8 +78,8 @@ pip install -r requirements.txt
 ## Interface Streamlit 
 Permet de visualiser la distance qui existe entre deux adresses saisies par l'utilisateur
  ![alt text](image.png)
-
-
+visualiser les predictions
+![alt text](image-1.png)
 ## Contributeurs
 
 - Alimou DIALLO (@santou): Data engineer
