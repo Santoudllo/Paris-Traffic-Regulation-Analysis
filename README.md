@@ -46,6 +46,21 @@ pip install -r requirements.txt
 - **scaler.pk:** sauvegardé utilisé pour normaliser les données d'entrée, garantissant que les features sont à une échelle appropriée pour le modèle.
 - **traffic_model.h5:** Modèle de réseau de neurones entraîné enregistré, contenant l'architecture complète et les poids, utilisé pour prédire l'état du trafic.
 
+### Résultats d'Entraînement du modele:
+
+- **Précision d'Entraînement:** 99.51%
+- **Perte d'Entraînement:** 0.0140
+
+### Résultats de Validation :
+
+- **Précision de Validation:** 99.38%
+- **Perte de Validation:** 0.0111
+
+### Résultats de Test :
+
+- **Précision de Test:** 99.21%
+- **Perte de Test:** 0.0168
+
 ## MAP
 
 **visualisation_streamlit_MAP.py**: Script pour créer une interface utilisateur permettant de saisir les informations et obtenir le résultat de la prédiction. Réalisé avec Streamlit.
