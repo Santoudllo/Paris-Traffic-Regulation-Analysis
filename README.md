@@ -19,6 +19,26 @@ Analyse de l'efficacité des mesures de régulation du trafic à Paris à l'aide
 - **recuperation_données_API.py:** Script pour réaliser des appels API.
 - **visualisation_Streamlit.py:** Script pour la visualisation des resultats d'analyses avec Streamlit.
 
+## modele_Tensorflow
+
+- **creation_model.py:** Script pour créer et entrainer le modele  .
+- **preprocessing.py:** Script pour réaliser le preprocessing avant la creation du modele.
+
+## modele
+
+- **label_encoder:** sauvegardé qui encode les étiquettes textuelles de l'état du trafic en valeurs numériques, nécessaire pour traiter les prédictions du modèle.
+- **scaler.pk:** sauvegardé utilisé pour normaliser les données d'entrée, garantissant que les features sont à une échelle appropriée pour le modèle.
+- **traffic_model.h5:** Modèle de réseau de neurones entraîné enregistré, contenant l'architecture complète et les poids, utilisé pour prédire l'état du trafic.
+
+## MAP
+
+**visualisation_streamlit_MAP.py**: Script pour créer une interface utilisateur permettant de saisir les informations et obtenir le résultat de la prédiction. Réalisé avec Streamlit.
+
+
+
+### Documentation
+
+
 ### Documentation
 
 - **Liens.md:** Contient le lien pour accéder l'API.
