@@ -6,13 +6,15 @@ Analyse de l'efficacité des mesures de régulation du trafic à Paris à l'aide
 Clone github repository
 ```
 git clone git@github.com:Santoudllo/Paris-Traffic-Regulation-Analysis.git 
-```
+
 ### Installation des Dépendances
 
 Pour installer les dépendances nécessaires, vous pouvez exécuter la commande suivante dans votre terminal :
 
 ```bash
 pip install -r requirements.txt
+
+```
 
 ## Structure du Projet
 
