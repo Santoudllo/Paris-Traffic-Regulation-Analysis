@@ -6,7 +6,6 @@ import seaborn as sns
 import folium
 from streamlit_folium import folium_static
 from geopy.geocoders import Nominatim
-import openrouteservice
 
 st.set_page_config(layout="wide")
 
