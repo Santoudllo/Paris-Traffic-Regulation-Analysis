@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from tensorflow.keras.models import Sequential
@@ -47,6 +48,16 @@ model.fit(X_train_scaled, y_train, epochs=10, validation_split=0.1)
 # Évaluation du modèle
 evaluation = model.evaluate(X_test_scaled, y_test)
 print("Test loss, Test accuracy:", evaluation)
+
+# Sauvegarde de LabelEncoder
+encoder_save_path = '../modele/label_encoder.pkl'
+with open(encoder_save_path, 'wb') as file:
+    pickle.dump(label_encoder, file)
+
+# Sauvegarde du scaler
+scaler_save_path = '../modele/scaler.pkl'
+with open(scaler_save_path, 'wb') as file:
+    pickle.dump(scaler, file)
 
 # Enregistrement du modèle
 model_save_path = '../modele/traffic_model.h5'
