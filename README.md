@@ -1,5 +1,19 @@
 # Paris-Traffic-Regulation-Analysis
 Analyse de l'efficacité des mesures de régulation du trafic à Paris à l'aide de données de comptage routier sur 13 mois, visant à identifier les forces et les faiblesses des dispositifs actuels et à formuler des recommandations d'amélioration.
+
+## Project Setup locally
+
+Clone github repository
+```
+git clone git@github.com:Santoudllo/Paris-Traffic-Regulation-Analysis.git 
+```
+### Installation des Dépendances
+
+Pour installer les dépendances nécessaires, vous pouvez exécuter la commande suivante dans votre terminal :
+
+```bash
+pip install -r requirements.txt
+
 ## Structure du Projet
 
 ### Répertoire des Données
