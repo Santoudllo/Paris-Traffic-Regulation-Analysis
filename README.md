@@ -75,11 +75,10 @@ pip install -r requirements.txt
 - **Liens.md:** Contient le lien pour accéder l'API.
 
 
-## Utilisation
+## Interface Streamlit 
+Permet de visualiser la distance qui existe entre deux adresses saisies par l'utilisateur
+ ![alt text](image.png)
 
-1. Clonez ce dépôt sur votre machine locale.
-2. Naviguez dans les répertoires pertinents pour accéder aux jeux de données, carnets, scripts et documentations.
-3. Suivez les instructions dans chaque carnet ou script pour réaliser des analyses, du prétraitement ou des tâches de visualisation.
 
 ## Contributeurs
 
