@@ -4,37 +4,38 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-import pickle
 
-# Chemin du dataset
-file_path = '../data/donnees_propres.csv'
+# Chargement des données
+file_path = '../data/comptages_separer.csv'
+data = pd.read_csv(file_path, sep=';')
 
-# Charger les données
-data = pd.read_csv(file_path, sep=',')
+# Transformation de 'Heure' en valeurs cycliques pour capturer la cyclicité du temps
+data['Heure'] = pd.to_datetime(data['Heure'], format='%H:%M:%S').dt.hour
+data['Heure_sin'] = np.sin(data['Heure'] * (2 * np.pi / 24))
+data['Heure_cos'] = np.cos(data['Heure'] * (2 * np.pi / 24))
 
-# Supprimer les lignes avec des valeurs non numériques
-data = data.dropna()
+# Sélection des features et du label
+features = ['Heure_sin', 'Heure_cos', 'Debit horaire', 'Taux d\'occupation']
+X = data[features]
+y = data['Etat trafic']
 
-# Sélectionner les colonnes 'Date' et 'Taux d\'occupation' comme features
-X = data[['Taux d\'occupation']]
-
-# Encoder les labels 'Etat trafic' en valeurs numériques
+# Encodage des labels
 label_encoder = LabelEncoder()
-y = label_encoder.fit_transform(data['Etat trafic'])
+y_encoded = label_encoder.fit_transform(y)
 
 # Séparation des données en ensembles d'entraînement et de test
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.2, random_state=42)
 
-# Normaliser les features
+# Normalisation des features
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# Création du modèle
+# Construction du modèle de réseau de neurones
 model = Sequential([
     Dense(128, activation='relu', input_shape=(X_train_scaled.shape[1],)),
-    Dense(128, activation='relu'),
-    Dense(np.unique(y).shape[0], activation='softmax')  
+    Dense(64, activation='relu'),
+    Dense(np.unique(y_encoded).shape[0], activation='softmax')
 ])
 
 # Compilation du modèle
@@ -43,11 +44,10 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 # Entraînement du modèle
 model.fit(X_train_scaled, y_train, epochs=10, validation_split=0.1)
 
-# Sauvegarde du modèle au format .keras
-model_path = '../modele_TensorFlow/model_traffic.keras'
-model.save(model_path)
+# Évaluation du modèle
+evaluation = model.evaluate(X_test_scaled, y_test)
+print("Test loss, Test accuracy:", evaluation)
 
-# Sauvegarde de l'encoder
-encoder_path = '../modele_TensorFlow/encoder.pkl'
-with open(encoder_path, 'wb') as f:
-    pickle.dump(label_encoder, f)
+# Enregistrement du modèle
+model_save_path = '../modele/traffic_model.h5'
+model.save(model_save_path)
