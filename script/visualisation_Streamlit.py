@@ -84,6 +84,15 @@ if os.path.exists(file_path):
                 folium.Marker([start_location.latitude, start_location.longitude], popup="Départ").add_to(m)
                 folium.Marker([end_location.latitude, end_location.longitude], popup="Arrivée").add_to(m)
                 
+                # Créer une liste de tuples contenant les coordonnées géographiques de départ et d'arrivée
+                points = [(start_location.latitude, start_location.longitude), (end_location.latitude, end_location.longitude)]
+                
+                # Créer une ligne reliant les deux points
+                route = folium.PolyLine(points, color='blue').add_to(m)
+                
+                # Ajouter la ligne à la carte
+                m.add_child(route)
+                
                 # Filtrer les données en fonction de l'état de trafic sélectionné
                 filtered_df = df[df[traffic_state_column] == selected_traffic_state]
                 
@@ -116,7 +125,6 @@ if os.path.exists(file_path):
             else:
                 print(f"Coordonnées manquantes ou invalides pour l'index {index}")
         
-        # Affichez la carte dans Streamlit
-        folium_static(m)
+        
 else:
     st.error("Le chemin spécifié pour le fichier n'existe pas.")
